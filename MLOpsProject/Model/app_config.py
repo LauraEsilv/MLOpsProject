@@ -2,7 +2,7 @@
 MODEL_VERSION = "0.0.1"
 PATH_TO_PREPROCESSOR = f"local_models/dv.pkl"
 PATH_TO_MODEL = f"local_models/model.pkl"
-CATEGORICAL_VARS = ['type', 'fixed_acidity', 'volatile_acidity', 'citric_acid',
+CATEGORICAL_VARS = ['wine_type', 'fixed_acidity', 'volatile_acidity', 'citric_acid',
        'residual_sugar', 'chlorides', 'free_sulfur_dioxide',
        'total_sulfur_dioxide', 'density', 'pH', 'sulphates', 'alcohol']
 

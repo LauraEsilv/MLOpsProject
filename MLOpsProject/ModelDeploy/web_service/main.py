@@ -21,8 +21,8 @@ def home():
 
 
 @app.post("/predict", response_model=PredictionOut, status_code=201)
-def predict(payload: InputData):
+def predict(winefeatures: InputData):
     dv = load_preprocessor(PATH_TO_PREPROCESSOR)
     model = load_model(PATH_TO_MODEL)
-    y = run_inference([payload], dv, model)
+    y = run_inference([winefeatures], dv, model)
     return {"wine_quality_prediction": y[0]}
