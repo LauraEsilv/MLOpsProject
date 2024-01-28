@@ -25,4 +25,4 @@ def predict(winefeatures: InputData):
     dv = load_preprocessor(PATH_TO_PREPROCESSOR)
     model = load_model(PATH_TO_MODEL)
     y = run_inference([winefeatures], dv, model)
-    return {"wine_quality_prediction": y[0]}
+    return PredictionOut(quality=y[0])
