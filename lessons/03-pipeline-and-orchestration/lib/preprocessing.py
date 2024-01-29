@@ -58,7 +58,7 @@ def extract_x_y(
     x = dv.transform(dicts)
     return x, y, dv
 
-
+@task(name="Process_data", tags=["Serialize"])
 def process_data(filepath: str, dv=None, with_target: bool = True) -> scipy.sparse.csr_matrix:
     """
     Load data from a parquet file

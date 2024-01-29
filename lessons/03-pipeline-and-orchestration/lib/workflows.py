@@ -8,6 +8,8 @@ import scipy.sparse
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
+
+@flow(retries=3, retry_delay_seconds=5, log_prints=True)
 def train_model_workflow(
     train_filepath: str,
     test_filepath: str,
@@ -30,6 +32,7 @@ def train_model_workflow(
     
     logger.info("Training process completed.")
 
+@flow(retries=3, retry_delay_seconds=5, log_prints=True)
 def batch_predict_workflow(
     input_filepath: str,
     model: Optional[LinearRegression] = None,
